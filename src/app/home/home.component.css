@@ -1,0 +1,51 @@
+.features
+{
+    background: transparent;
+    display: flex;
+    position: relative;
+}
+.left-container 
+{
+    width:50%;
+    padding-left: 30px;
+    padding-top:80px ;
+    padding-bottom: 50px;
+}
+.left-container h1
+{
+    font-size: 50px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #333333;
+   
+}
+
+.left-container p 
+{
+    font-weight: 100;
+    font-size: 25px;
+    line-height: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.left-container .more_btn
+{
+    border: none;
+    outline: 0;
+    font-size: 20px;
+    background-color: transparent;
+    color: #2e5cd1;
+    cursor: pointer;
+}
+.right-container 
+{
+    width:50%;
+}
+.right-container img 
+{
+    width: 100%;    
+}
+.benefits
+{
+    background: beige;
+}

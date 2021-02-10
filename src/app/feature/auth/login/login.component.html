@@ -1,0 +1,31 @@
+<div class="container-fluid login-dashboard" role="alert">
+  <form class="login-form" [formGroup]="loginForm" #ngForm="ngForm" >
+    <h2 class="lead form-heading">Login Form</h2>
+    <div class="form-group">
+      <label for="emp">Employee ID</label>
+      <div *ngIf="!f.emp.valid && (f.emp.touched || ngForm.submitted)">
+        <div *ngIf="f.emp.errors.required" class="text-danger font-weight-light">*Employee id  is required</div>
+      </div>
+      <input type="text" class="form-control" id="emp" formControlName="emp" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <div *ngIf="!f.password.valid && (f.password.touched || ngForm.submitted)">
+        <div *ngIf="f.password.errors.required" class="text-danger font-weight-light">*Password is required</div>
+      </div>
+      <input type="password" class="form-control" id="password" formControlName="password" required>
+    </div>
+   
+    <button type="submit" class="login-btn lead" (click)="onSubmit()">Submit</button>
+  </form>
+
+  
+</div>
+  
+  <!-- <button 
+    class="btn btn-outline-warning" 
+    (click)="login(Role.User)">Login as User</button>
+  
+  <button 
+    class="btn btn-outline-danger" 
+    (click)="login(Role.Admin)">Login as Admin</button> -->

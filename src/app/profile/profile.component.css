@@ -1,0 +1,149 @@
+.profile
+{
+    background-color: #dfe4ea;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.profile .left-container 
+{
+    width: 70%;
+    background: white;
+    padding:20px;
+    
+}
+.profile .right-container 
+{
+    width:25%;
+    background-color: #a4b0be;
+    
+}
+.left-container .manage-leave-header
+{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 10px
+}
+.left-container .manage-leave-header .manage-leave-title
+{
+    font-size: 25px;
+    font-weight: 300;
+}
+.left-container .manage-leave-header .btn-manage-leave
+{
+    border:0;
+    outline:0;
+    padding: 10px;
+    border-radius: 2px;
+    color: white;
+    background-color: #0984e3;
+    font-weight: 500;
+    
+}
+.left-container .manage-leave-header .btn-manage-leave:hover
+{
+    transform: scale(1.02);
+    box-shadow:
+              0px  25px 40px -5px rgba(#000, 0.3),
+        inset 0px   0px  0px  0px rgba(#0984e3, 0),
+        inset 0px -27px  0px  0px #0f7bce;
+}
+
+
+
+
+
+/* .left-container .leaveTypeContainer
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+.left-container .leaveType
+{
+  
+    display: flex;
+    align-items: center;
+    
+   
+}
+.left-container .leaveTypeColor 
+{
+    width:20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+.left-container .calender 
+{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.left-container .calender .calender-container
+{
+    display: flex;
+    width: 100%;
+    
+    
+}
+.left-container .calender .calender-container .title 
+{
+    width: 20%;
+    font-weight: 500;
+}
+.left-container .calender .calender-container .timeline
+{
+    width: 80%;
+    
+}
+.left-container .calender .calender-container .date-timeline
+{
+    background-color: yellow;
+}
+.left-container .calender .calender-container .day-timeline
+{
+    background-color: rgb(196, 196, 162);
+
+}
+.left-container .team-plan 
+{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+}
+.left-container .team-plan .team{
+    width:20%;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.left-container .team-plan .team-leave
+{
+    width: 80%;;
+}
+.left-container .team-plan .team .team-title
+{
+    font-weight: 500;
+}
+.left-container .team-plan .team .team-members
+{
+    font-weight: 300;
+}
+ */
+
+ .error
+ {
+     margin-left: 10px;
+     font-size: 12px;
+     
+ }
+ .k-event-template
+ {
+     background: green;
+ }
+ 
