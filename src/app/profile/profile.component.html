@@ -70,10 +70,24 @@
     <kendo-scheduler
       [kendoSchedulerBinding]="events"
       [selectedDate]="selectedDate"
+      [kendoSchedulerBinding]="editService.events | async"
+      [modelFields]="editService.fields"
+      [loading]="editService.loading"
+      [editable]="true"
+      [selectedViewIndex]="0"
+      [selectedDate]="selectedDate"
+      (slotDblClick)="slotDblClickHandler($event)"
+      (eventDblClick)="eventDblClickHandler($event)"
+      (cancel)="cancelHandler($event)"
+      (save)="saveHandler($event)"
+      (remove)="removeHandler($event)"
+      (dragEnd)="dragEndHandler($event)"
+      (resizeEnd)="resizeEndHandler($event)"
       scrollTime="08:00"
       style="height: 600px"
     >
-      <kendo-scheduler-month-view > </kendo-scheduler-month-view>
+    <kendo-scheduler-day-view > </kendo-scheduler-day-view>
+      <kendo-scheduler-month-view  > </kendo-scheduler-month-view>
       <kendo-scheduler-agenda-view> </kendo-scheduler-agenda-view>
     </kendo-scheduler>
   </div>

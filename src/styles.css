@@ -5,3 +5,24 @@
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
+
+kendo-scheduler month-view .k-scheduler-table td,
+.k-scheduler-table th {
+    height: 5.5em;
+}
+kendo-scheduler month-view .k-scheduler-monthview table td{
+  
+    
+    /* height: 100% !important; */
+    /* height: 100px; */
+    height: 30em;
+    
+}
+kendo-scheduler month-view .k-scheduler-monthview table 
+{
+    /* height: 100%; */
+}
+kendo-scheduler month-view .k-event-template
+{
+
+}

@@ -12,8 +12,8 @@ import {HttpClientModule} from "@angular/common/http";
 import { SchedulerModule } from '@progress/kendo-angular-scheduler';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TreeViewModule } from '@progress/kendo-angular-treeview';
-
-
+import { FormsModule }   from '@angular/forms';
+import { EditService } from './profile/edit.service';
 
 
 
@@ -36,9 +36,10 @@ import { TreeViewModule } from '@progress/kendo-angular-treeview';
     SchedulerModule,
     BrowserAnimationsModule,
     TreeViewModule,
+    FormsModule 
 
   ],
-  providers: [],
+  providers: [EditService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
