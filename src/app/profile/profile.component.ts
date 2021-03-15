@@ -5,14 +5,7 @@ import { CrudOperation, EditMode, SchedulerEvent } from '@progress/kendo-angular
 import { sampleData, displayDate } from './event.utc';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {FormBuilder,Validators,FormControl, FormGroup} from "@angular/forms"
-import {
-  CancelEvent,
-  EventClickEvent,
-  RemoveEvent,
-  SaveEvent,
-  SchedulerComponent,
-  SlotClickEvent
-} from '@progress/kendo-angular-scheduler';
+
 import '@progress/kendo-date-math/tz/regions/Europe';
 import '@progress/kendo-date-math/tz/regions/NorthAmerica';
 import { filter } from 'rxjs/operators';
@@ -117,80 +110,6 @@ export class ProfileComponent implements OnInit {
       return this.leaveForm.controls;
   }
 
-
-  
- 
-
-
-
-
-public removeHandler({ sender, dataItem }: RemoveEvent): void {
- 
-      sender.openRemoveConfirmationDialog().subscribe((shouldRemove) => {
-          if (shouldRemove) {
-              this.editService.remove(dataItem);
-          }
-      });
-  
-}
-
-
-
-public dragEndHandler({ sender, event, start, end, isAllDay }): void {
-  let value = { Start: start, End: end, IsAllDay: isAllDay };
-  let dataItem = event.dataItem;
-      this.handleUpdate(dataItem, value);
-  
-}
-public resizeEndHandler({ sender, event, start, end }): void {
-  let value = { Start: start, End: end };
-  let dataItem = event.dataItem;
-
- 
-      this.handleUpdate(dataItem, value);
-  
-}
-
-
-private handleUpdate(item: any, value: any, mode?: EditMode): void {
-  const service = this.editService;
-  console.log(this.editService)
-  console.log(service)
-  if (mode === EditMode.Occurrence) {
-      if (service.isException(item)) {
-          service.update(item, value);
-      } else {
-          service.createException(item, value);
-      }
-  } else {
-      // The item is non-recurring or we are editing the entire series.
-      service.update(item, value);
-  }
-}
-
-private handleRemove(item: any, mode: EditMode): void {
-  const service = this.editService;
-  if (mode === EditMode.Series) {
-      service.removeSeries(item);
-  } else if (mode === EditMode.Occurrence) {
-      if (service.isException(item)) {
-          service.remove(item);
-      } else {
-          service.removeOccurrence(item);
-      }
-  } else {
-      service.remove(item);
-  }
-}
-private seriesDate(head: Date, occurence: Date, current: Date): Date {
-  const year = occurence.getFullYear() === current.getFullYear() ? head.getFullYear() : current.getFullYear();
-  const month = occurence.getMonth() === current.getMonth() ? head.getMonth() : current.getMonth();
-  const date = occurence.getDate() === current.getDate() ? head.getDate() : current.getDate();
-  const hours = occurence.getHours() === current.getHours() ? head.getHours() : current.getHours();
-  const minutes = occurence.getMinutes() === current.getMinutes() ? head.getMinutes() : current.getMinutes();
-
-  return new Date(year, month, date, hours, minutes);
-}
 
 enableEdit()
 {

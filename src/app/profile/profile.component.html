@@ -78,12 +78,6 @@
     <kendo-scheduler
       [kendoSchedulerBinding]="events"
       [selectedDate]="selectedDate"
-      [loading]="editService.loading"
-      [editable]="true"
-      [selectedViewIndex]="0"
-      (remove)="removeHandler($event)"
-      (dragEnd)="dragEndHandler($event)"
-      (resizeEnd)="resizeEndHandler($event)"
       scrollTime="08:00"
       style="height: 600px"
     >
