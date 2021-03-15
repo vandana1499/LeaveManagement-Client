@@ -70,7 +70,9 @@ export class EditService extends BaseEditService<MyEvent> {
         return this.http
             .jsonp(`https://demos.telerik.com/kendo-ui/service/tasks/${action}?${this.serializeModels(data)}`, 'callback')
             .pipe(
-                map(res => <any[]>res),
+                map(
+                    res =>
+                     <any[]>res),
                 tap(() => this.loading = false)
             );
     }

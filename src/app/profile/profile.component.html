@@ -2,12 +2,18 @@
   <div class="left-container">
     <div class="manage-leave-header">
       <h3 class="manage-leave-title">My calendar</h3>
-      <button class="btn-manage-leave" (click)="open(content)">
+      <div class="toolBtns">
+      <button class="btn-manage-leave" (click)="enableManage(); open(content)">
         <i class="fa fa-suitcase" aria-hidden="true"></i> Manage Leave
       </button>
+      <button class="btn-manage-leave" (click)="enableEdit(); open(content);">
+        <i class="fas fa-pencil-alt"></i> Edit Leave
+      </button>
+    </div>
       <ng-template #content let-modal>
         <div class="modal-header">
-          <h4 class="modal-title" id="modal-basic-title">Manage Your leaves</h4>
+          <h4 class="modal-title" id="modal-basic-title" *ngIf="!editEnable">Manage Your leaves</h4>
+          <h4 class="modal-title" id="modal-basic-title" *ngIf="editEnable">Edit your leave</h4>
           <button
             type="button"
             class="close"
@@ -58,7 +64,9 @@
             </div>
             <div class="form-group row">
               <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+                <button type="submit" class="btn btn-primary" (click)="onSubmit()" *ngIf="!editEnable">Submit</button>
+                <button type="submit" class="btn btn-primary" (click)="onEditSubmit()" *ngIf="editEnable">Submit</button>
+
               </div>
             </div>
           </form>
@@ -70,24 +78,18 @@
     <kendo-scheduler
       [kendoSchedulerBinding]="events"
       [selectedDate]="selectedDate"
-      [kendoSchedulerBinding]="editService.events | async"
-      [modelFields]="editService.fields"
       [loading]="editService.loading"
       [editable]="true"
       [selectedViewIndex]="0"
-      [selectedDate]="selectedDate"
-      (slotDblClick)="slotDblClickHandler($event)"
-      (eventDblClick)="eventDblClickHandler($event)"
-      (cancel)="cancelHandler($event)"
-      (save)="saveHandler($event)"
       (remove)="removeHandler($event)"
       (dragEnd)="dragEndHandler($event)"
       (resizeEnd)="resizeEndHandler($event)"
       scrollTime="08:00"
       style="height: 600px"
     >
-    <kendo-scheduler-day-view > </kendo-scheduler-day-view>
+  
       <kendo-scheduler-month-view  > </kendo-scheduler-month-view>
+      <kendo-scheduler-day-view > </kendo-scheduler-day-view>
       <kendo-scheduler-agenda-view> </kendo-scheduler-agenda-view>
     </kendo-scheduler>
   </div>

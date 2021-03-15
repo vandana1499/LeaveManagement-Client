@@ -8,7 +8,7 @@ import { NotFoundComponent } from './error/not-found/not-found.component';
 import { SharedModuleModule } from './shared-module/shared-module.module';
 import {ReactiveFormsModule} from "@angular/forms";
 import { HomeComponent } from './home/home.component'
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule, HttpClientJsonpModule } from "@angular/common/http";
 import { SchedulerModule } from '@progress/kendo-angular-scheduler';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TreeViewModule } from '@progress/kendo-angular-treeview';
@@ -36,7 +36,8 @@ import { EditService } from './profile/edit.service';
     SchedulerModule,
     BrowserAnimationsModule,
     TreeViewModule,
-    FormsModule 
+    FormsModule ,
+    HttpClientJsonpModule
 
   ],
   providers: [EditService],

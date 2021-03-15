@@ -4,13 +4,13 @@ import { SchedulerEvent } from '@progress/kendo-angular-scheduler';
 
 const baseData: any[] = [
     {
+        "ownerID":3,
         "TaskID": 120,
-        "OwnerID": 3,
         "Title": "Website upload",
         "Description": "",
         "StartTimezone": null,
-        "Start": "2013-06-07T07:00:00.000Z",
-        "End": "2013-06-07T08:30:00.000Z",
+        "Start": "2021-06-02",
+        "End": "2021-06-04",
         "EndTimezone": null,
         "RecurrenceRule": "",
         "RecurrenceID": null,
@@ -33,7 +33,7 @@ const randomInt = (min, max): number => {
 export const displayDate = new Date(currentYear, 5, 24);
 
 export const sampleData = baseData.map(dataItem => (
-    <SchedulerEvent> {
+     {
          id: dataItem.TaskID,
         start: parseAdjust(dataItem.Start),
         // startTimezone: dataItem.startTimezone,
@@ -46,7 +46,8 @@ export const sampleData = baseData.map(dataItem => (
         // recurrenceId: dataItem.RecurrenceID,
         // recurrenceException: dataItem.RecurrenceException,
         // roomId: dataItem.RoomID,
-        // ownerID: dataItem.OwnerID
+         ownerID: dataItem.OwnerID
+        
     }
 ));
 
@@ -59,6 +60,7 @@ export const sampleDataWithResources = baseData.map(dataItem => (
         // endTimezone: dataItem.endTimezone,
         isAllDay: dataItem.IsAllDay,
         title: dataItem.Title,
+        ownerID:dataItem.ownerID
         // description: dataItem.Description,
         // recurrenceRule: dataItem.RecurrenceRule,
         // recurrenceId: dataItem.RecurrenceID,

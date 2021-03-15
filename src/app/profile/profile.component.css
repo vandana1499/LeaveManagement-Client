@@ -28,6 +28,13 @@
     align-items: center;
     padding:0 10px
 }
+.left-container .manage-leave-header .toolBtns
+{
+    display: flex;
+    width:30%;
+    justify-content: space-around;
+    height:50px ;
+}
 .left-container .manage-leave-header .manage-leave-title
 {
     font-size: 25px;
